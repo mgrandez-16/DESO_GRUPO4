@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>TULAX</title>
+    </head>
+    <body>
+        <% errors.forEach(function(error) { %>            
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%= error.text %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <% }); %>
+
+        <h1>REGISTRO</h1>
+        <form action="/register" method="POST">
+           <label>nombre</label>
+           <input type="text" id="first_name" name="first_name">
+           <br>
+           <label>apellido</label>
+           <input type="text" id="last_name" name="last_name">
+           <br>
+           <label>email</label>
+           <input type="email" id="email" name="email">
+           <br>
+           <label>telefono</label>
+           <input type="text" id="telephone" name="telephone">
+           <br>
+           <label>sponsor</label>
+           <input type="text" id="user_sponsor" name="user_sponsor">
+           <br>
+           <label>usuario</label>
+           <input type="text" id="username" name="username">
+           <br>
+           <label>contraseña</label>
+           <input type="password" id="password" name="password">
+           <br>
+           <label>confirmar contraseña</label>
+           <input type="password" id="confirm_password" name="confirm_password">
+            <br>
+            <input type="submit" value="registrar usuario">
+            <br>
+            <a href="/">login</a>
+        </form>
+    </body>
+</html>
