@@ -4,7 +4,7 @@
   "description": "Sistema de afiliacion de referidos de taxis",
   "main": "index.js",
   "scripts": {
-    "dev": "node src/routes"
+    "dev": "nodemon src/routes/index.js"
   },
   "repository": {
     "type": "git",
