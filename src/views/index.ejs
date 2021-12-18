@@ -2,20 +2,158 @@
 <html lang="es">
     <head>
         <meta charset="utf-8" />
-        <title>TULAX</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Public Market</title>
+        <link type="text/css" rel="stylesheet" href="dist/css/styles.css" />
+        <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>LOG IN</h1>
-        <form action="/authenticate" method="POST">
-           <label>usuario</label>
-           <input type="text" id="username" name="username">
-           <br>
-           <label>contraseña</label>
-           <input type="password" id="password" name="password">
-            <br>
-            <input type="submit" value="login">
-            <br>
-            <a href="/registrar">registrar</a>
-        </form>
-    </body>
+        <div id="layoutDefault">
+            <div id="layoutDefault_content">
+                <main>
+                    <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
+                        <div class="container py-4">
+                            <a class="navbar-brand text-primary" href="/">Public Market</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <a class="ml-auto mr-lg-5 btn-primary btn rounded-pill px-4" href="/login">Iniciar Sesión<i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </nav>
+                    <header class="page-header page-header-light bg-white">
+                        <div class="page-header-content">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-7 col-12" id="frminicio">
+                                        <h1 class="page-header-title">Bienvenido</h1>
+                                        <p class="page-header-text mb-5">¿Alguna vez te pagaron por comprar? Registrate en la primera plataforma que te paga por comprar en internet.</p>
+                                        <form  class="page-header-signup mb-2 mb-md-0">
+                                            <div class="form-row justify-content-center">
+                                                <div class="col-md-8">
+                                                    <div class="form-group mr-0 mr-lg-2"><label class="sr-only" for="inputEmail">Correo</label><input class="form-control form-control-solid rounded-pill" id="inputEmail" type="email" placeholder="Ingresa tu correo electrónico..." /></div>
+                                                </div>
+                                                <div class="col-md-4"><button id="btnregistro" class="btn btn-primary btn-block btn-marketing rounded-pill" type="button">Registrate</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-7 col-12" id="frmregistro" >
+                                        <h1 class="page-header-title">¡Estas a un paso!</h1>
+                                        <p class="page-header-text">Completa tus datos ingresando en los siguientes campos tus datos personales.</p>
+                                            <div class="card rounded-lg text-dark">
+                                                <div class="card-body">
+                                                    <form>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapFirstName">Nombres</label><input class="form-control rounded-pill" id="leadCapFirstName" type="text" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapLastName">Apellidos</label><input class="form-control rounded-pill" id="leadCapLastName" type="text" /></div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="inputEmail">Correo</label><input class="form-control rounded-pill" id="inputEmail" type="email" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapPhone">Telefono</label><input class="form-control rounded-pill" id="leadCapPhone" type="text" /></div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapPassword">Crear contraseña</label><input class="form-control rounded-pill" id="leadCapPassword" type="password" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapRepeatPassword">Repetir contraseña</label><input class="form-control rounded-pill" id="leadCapRepeatPassword" type="password" /></div>
+                                                        </div> 
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6" id="frmCode"><label class="small text-gray-600" for="leadCapcode">Códico Invitación</label><input class="form-control rounded-pill" id="code" type="text" /></div>
+                                                            <div class="form-group col-md-6" >&nbsp<div class="form-check"><input id="frmCheck" type="checkbox" class="form-check-input"><label class="small text-gray-600" for="leadCheckcode">Selecciona la casilla si no tienes código de invitación.</label></div>
+                                                        </div>
+                                                        </div>
+                                                        <button class="btn btn-primary btn-marketing btn-block rounded-pill mt-4" type="submit">Listo</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                      </div>
+                                    <div class="col-lg-5 d-none d-lg-block"><img class="img-fluid" src="dist/img/drawkit-user-mobile-color.svg" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </header>
+                    <section class="bg-light py-10">
+                        <div class="container">
+                            <div class="row text-center">
+                                <div class="col-lg-4 mb-5 mb-lg-0">
+                                    <div class="icon-stack icon-stack-xl bg-primary text-white mb-4"><i data-feather="shopping-bag"></i></div>
+                                    <h3>Compra online</h3>
+                                    <p class="mb-0">Todo lo que necesites lo encontraras en nuestra App de compras Public Market, compra seguro y a un buen precio.</p>
+                                </div>
+                                <div class="col-lg-4 mb-5 mb-lg-0">
+                                    <div class="icon-stack icon-stack-xl bg-primary text-white mb-4"><i data-feather="dollar-sign"></i></div>
+                                    <h3>Vende online</h3>
+                                    <p class="mb-0">Afiliate y vende con nosotros, tenemos una cartera de cliente listo para comprar</p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="icon-stack icon-stack-xl bg-primary text-white mb-4"><i data-feather="users"></i></div>
+                                    <h3>Invita a tus amigos</h3>
+                                    <p class="mb-0">GANA por invitar a tus amigos y por cada vez que ellos compren en Public Market.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            <div id="layoutDefault_footer">
+                <footer class="footer pt-10 pb-5 mt-auto bg-primary footer-dark">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="footer-brand">Public Market</div>
+                                <div class="mb-3">¡Descarga nuestra App!</div>
+                                <div class="icon-list-social mb-5">
+                                    <a class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-instagram"></i></a><a class="icon-list-social-link" href="javascript:void(0);"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="offset-lg-6 col-lg-6 col-md-6 col-6 text-center">
+                                        <div class="mb-4">Disponible</div>
+                                        <img src="dist/img/disponible.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-5" />
+                        <div class="row align-items-center">
+                            <div class="col-md-6 small">Copyright &copy; Public Market</div>
+                            <div class="col-md-6 text-md-right small">
+                                <a href="javascript:void(0);">Política de Privacidad</a>
+                                &middot;
+                                <a href="javascript:void(0);">Terminos &amp; Condiciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="dist/js/scripts.js"></script>
+        <script>
+            $('#frmregistro').hide();
+
+            $("#btnregistro").click(function() {
+                $('#frminicio').hide();
+                $('#frmregistro').show();
+
+            });
+
+            $( '#frmCheck' ).on( 'click', function() {
+                if( $(this).is(':checked') ){
+                    // Hacer algo si el checkbox ha sido seleccionado
+                    $("#code").prop('disabled', true);
+                } else {
+                    // Hacer algo si el checkbox ha sido deseleccionado
+                    $("#code").prop('disabled', false);
+                }
+            });
+        </script>
 </html>

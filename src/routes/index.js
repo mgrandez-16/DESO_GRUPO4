@@ -7,6 +7,9 @@ const session = require('express-session');
 const app = express();
 require('../config/database');
 
+
+app.use('/dist', express.static(path.join(__dirname, "../views/dist/")));
+
 //settings
 app.set('port', 3000);
 app.set('views',path.join(__dirname,'../views'));
@@ -30,7 +33,6 @@ app.use(require('../routes/users'));
 
 //server is listenning
 app.listen(app.get('port'));
-
 
 
 
