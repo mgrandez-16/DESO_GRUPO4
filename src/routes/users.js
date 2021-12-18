@@ -4,8 +4,14 @@ const router = express.Router();
 const User = require('../model/User');
 
 router.get('/',(req, res) => {
-    res.render('index');
+    const errors = [];
+    res.render('index', {errors});
 });
+
+router.get('/login',(req, res) => {
+    res.render('login');
+});
+
 
 router.get('/registrar',(req, res) => {
     const errors = [];
@@ -37,11 +43,11 @@ router.post('/register',(req, res) => {
     }
 
     if(errors.length > 0){
-        res.render('register', {errors});
+        res.render('index', {errors});
     }else{
         const newUser = new User({first_name, last_name, email, telephone, user_sponsor, username, password});
         newUser.save();
-        res.redirect('/');
+        res.redirect('login');
     }
 });
 

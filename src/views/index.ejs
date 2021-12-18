@@ -12,6 +12,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <% errors.forEach(function(error) { %>            
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%= error.text %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <% }); %>
         <div id="layoutDefault">
             <div id="layoutDefault_content">
                 <main>
@@ -44,25 +52,28 @@
                                         <p class="page-header-text">Completa tus datos ingresando en los siguientes campos tus datos personales.</p>
                                             <div class="card rounded-lg text-dark">
                                                 <div class="card-body">
-                                                    <form>
+                                                    <form action="/register" method="POST">
                                                         <div class="form-row">
-                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapFirstName">Nombres</label><input class="form-control rounded-pill" id="leadCapFirstName" type="text" /></div>
-                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapLastName">Apellidos</label><input class="form-control rounded-pill" id="leadCapLastName" type="text" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapFirstName">Nombres</label><input class="form-control rounded-pill" id="first_name" name="first_name" type="text" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapLastName">Apellidos</label><input class="form-control rounded-pill" id="last_name" name="last_name" type="text" /></div>
                                                         </div>
                                                         <div class="form-row">
-                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="inputEmail">Correo</label><input class="form-control rounded-pill" id="inputEmail" type="email" /></div>
-                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapPhone">Telefono</label><input class="form-control rounded-pill" id="leadCapPhone" type="text" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="inputEmail">Correo</label><input class="form-control rounded-pill" id="email" name="email" type="email" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapPhone">Telefono</label><input class="form-control rounded-pill" id="telephone" name="telephone" type="text" /></div>
                                                         </div>
                                                         <div class="form-row">
-                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapPassword">Crear contraseña</label><input class="form-control rounded-pill" id="leadCapPassword" type="password" /></div>
-                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapRepeatPassword">Repetir contraseña</label><input class="form-control rounded-pill" id="leadCapRepeatPassword" type="password" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapPassword">Crear contraseña</label><input class="form-control rounded-pill" id="password" type="password" name="password" /></div>
+                                                            <div class="form-group col-md-6"><label class="small text-gray-600" for="leadCapRepeatPassword">Repetir contraseña</label><input class="form-control rounded-pill" id="confirm_password" name="confirm_password" type="password" /></div>
                                                         </div> 
                                                         <div class="form-row">
-                                                            <div class="form-group col-md-6" id="frmCode"><label class="small text-gray-600" for="leadCapcode">Códico Invitación</label><input class="form-control rounded-pill" id="code" type="text" /></div>
+                                                            <div class="form-group col-md-6" id="frmCode"><label class="small text-gray-600" for="leadCapcode">Códico Invitación</label><input class="form-control rounded-pill" name="user_sponsor" id="code" type="text" /></div>
                                                             <div class="form-group col-md-6" >&nbsp<div class="form-check"><input id="frmCheck" type="checkbox" class="form-check-input"><label class="small text-gray-600" for="leadCheckcode">Selecciona la casilla si no tienes código de invitación.</label></div>
                                                         </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6" id="username"><label class="small text-gray-600" for="leadCapcode">Usuario</label><input class="form-control rounded-pill" name="username" id="username" type="text" /></div>
                                                         </div>
-                                                        <button class="btn btn-primary btn-marketing btn-block rounded-pill mt-4" type="submit">Listo</button>
+                                                        </div>
+                                                        <button class="btn btn-primary btn-marketing btn-block rounded-pill mt-4" type="submit">registrar</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -141,18 +152,27 @@
             $('#frmregistro').hide();
 
             $("#btnregistro").click(function() {
+                var email  = $('#inputEmail').val();
+                if (email == ""){
+                    alert('Ingrese correo');
+                    $('#inputEmail').focus();
+                }else{
+
+                $('#email').val(email);
                 $('#frminicio').hide();
                 $('#frmregistro').show();
-
+                } 
             });
 
             $( '#frmCheck' ).on( 'click', function() {
                 if( $(this).is(':checked') ){
                     // Hacer algo si el checkbox ha sido seleccionado
                     $("#code").prop('disabled', true);
+                    $("#code").val('batto');
                 } else {
                     // Hacer algo si el checkbox ha sido deseleccionado
                     $("#code").prop('disabled', false);
+                    $("#code").val('');
                 }
             });
         </script>
