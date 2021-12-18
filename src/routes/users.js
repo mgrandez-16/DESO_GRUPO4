@@ -18,6 +18,11 @@ router.get('/registrar',(req, res) => {
     res.render('register', {errors});
 });
 
+router.get('/dashboard',(req, res) => {
+    const errors = [];
+    res.render('dashboard', {errors});
+});
+
 router.post('/register',(req, res) => {
     const {first_name, last_name, email, telephone, user_sponsor, username,password, confirm_password} = req.body;
     const errors = [];
